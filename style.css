@@ -1,0 +1,217 @@
+:root{
+    --primary:#b18110;
+    --bg:hwb(0 15% 84%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-color:var(--bg);
+    color:hwb(0 9% 91%);
+    min-height: 2000px;
+}
+
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    background-color: rgb(21, 19, 19);
+    border-bottom: 0.5px solid #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 3rem;
+    font-weight:800;
+    color:rgb(255, 255, 255);
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color:rgb(221, 155, 49);
+}
+
+.navbar .navbar-nav a {
+    color:#fff;
+    font-weight:700;
+    font-size: 1.4rem;
+    display:inline-block;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scalex(0);
+    transition: 0,2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform:scalex(0.5rem);
+}
+
+.navbar .navbar-extra a {
+    color:#fff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('img/kiri.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::after {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg,rgb(39, 39, 39)8%, rgba(68, 68, 68, 0)) 50%;
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 5em;
+    color:#fff;
+    text-shadow: 1px 1px 1px rgb(249, 249, 249);
+    line-height: 1;
+}
+
+.hero .content h1 span {
+    color:rgb(233, 158, 38);
+}
+
+.hero .content p {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgb(1,1,3,0.5);
+    mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color:#fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgb(255, 255, 255);
+}
+
+ /* about section */
+ .about {
+    padding:8rem 7% 1.4rem;
+    color: #fff;
+ }
+
+ .about h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+ }
+
+ .about h2 span {
+    color:rgb(208, 148, 9);
+ }
+
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0.0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.3);
+    }
+
+    
+}
+/* mobile phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
